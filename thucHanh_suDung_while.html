@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //vòng lặp while
+    let bang ,i , j
+    bang = "<table border='1' width='300' cellspacing='0' cellpadding='3'>"
+    i=j=1
+    while (i <=10){
+        bang = bang + "<tr>"
+        while ( j <= 10){
+            bang=bang+"<td>" +i *j +"</td>"
+            j++
+        }
+        bang = bang+ "</tr>"
+        j =1
+       i++
+    }
+    bang=bang+"</table>"
+    document.write(bang)
+
+    // vòng lặp lồng nhau for
+
+    /*let sout;
+    sout = "<table border='1' width='300' cellspacing='0' cellpadding='3'>"
+    for (i = 1; i <= 10; i++) {
+        sout = sout + "<tr>";
+        for (j = 1; j <= 10; j++) {
+            sout = sout + "<td>" + i * j + "</td>";
+        }
+        sout = sout + "</tr>";
+    }
+    sout = sout + "</table>";
+    document.write(sout);*/
+    /*let nhapSo
+    do {
+        nhapSo= +prompt("nhập số từ 1 -> 10")
+        if (nhapSo<1 || nhapSo>10){
+            alert("nhập lại")
+        }
+    }while (nhapSo<1 || nhapSo>10)
+    alert("số vừa nhập là " + nhapSo)*/
+   /* for (let i = 1; i <101 ; i++) {
+        document.write("<hr width = " + i + "%>");
+        i++;
+
+    }*/
+
+    //sử dụng vòng lặp
+ /*   let so
+    let tong=0
+  while (so != -1 ){
+        so = +prompt("nhap so")
+      console.log(so)
+      tong += so
+      console.log(tong)
+  }*/
+</script>

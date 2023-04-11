@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>So nguyen to</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let nhap = prompt("nhap so")
+    let i = 2
+    while (i < nhap){
+
+        let q = true
+        let j = 2
+        while (j < i){
+            if (i % j == 0){
+                q = false
+                break
+            }
+            j++
+        }
+        if (q){
+            document.write(i +"<br>")
+        }
+        i ++
+    }
+
+
+
+  /*  let nhap = prompt("nhap so")
+    for (let i = 2; i <=nhap ; i++) {
+        let a = true
+        for (let j = 2; j <i ; j++) {
+            if (i % j == 0 ){
+                 a = false
+                break
+            }
+        }if (a){
+            document.write(i + "<br>")}
+
+    }*/
+</script>

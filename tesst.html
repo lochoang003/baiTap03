@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="bai1()">bai1</button>
+<button onclick="bai2()">bai2</button>
+<button onclick="bai3()">bai3</button>
+<button onclick="bai4()">bai4</button>
+<button onclick="bai5()">bai5</button>
+<button onclick="bai6()">bai6</button>
+<button onclick="bai7()">bai7</button>
+<button onclick="bai8()">bai8</button>
+
+</body>
+</html>
+<script>
+    // bai 1
+    function bai1() {
+        for (let i = 1; i < 100; i++) {
+            document.write(i + "<br>")
+
+        }
+        if (i = 99) {
+            alert("ban da hoan thanh")
+        }
+    }
+    //bai 2
+    function bai2() {
+        let nhietDo
+        do {
+            nhietDo=prompt("nhap")
+            if (nhietDo>100){
+                alert("giam nhiet do")
+            }
+            if (nhietDo<20){
+                alert("tang nhiet do")
+            }
+
+        }while (nhietDo>100||nhietDo<20)
+        alert("nhiet do vua nhap " + nhietDo)
+    }
+    //bai 3
+    function bai3() {
+        let ad, b
+        b =1
+        ad = 0
+
+        for (let i = 1; i <20 ; i++) {
+            let tong = ad +b
+            ad = b
+            b = tong
+            document.write(tong + "<br>")
+    }
+
+
+    }
+    // bai 4
+ function bai4() {
+     let ad, b
+     b =1
+     ad = 0
+     let inPut= prompt("nhap tong lan cong fibonacci")
+     let chia= prompt("cac so trong day chia het cho")
+
+     for (let i = 1; i <inPut ; i++) {
+         let tong = ad +b
+         ad = b
+         b = tong
+         document.write(tong + "<br>")
+         if (tong% chia == 0 ){
+             document.write("so chia het cho "+ chia +" la " + tong)
+
+         }
+     }
+ }
+    // bai 5
+   function bai5() {
+       let ad, b
+       b =1
+       ad = 0
+       let tong=0
+       let inPut= prompt("nhap tong lan cong fibonacci")
+
+
+       for (let i = 1; i <inPut ; i++) {
+           let cong = ad +b
+           ad = b
+           b = cong
+
+           tong += cong
+           document.write(tong + "<br>")
+       }
+   }
+   // bai 6
+    function bai6() {
+        let tinh=0
+        let tong =0
+        for (let j = 1;j>=0;j++ ) {
+            if (tinh >= 30 ){
+                break
+            }
+            if (j% 7 === 0){
+                tong += j
+                document.write(j +"<br>")
+                tinh ++
+            }
+        }document.write( "tong 30 so chia het cho 7 la "+tong)
+    }
+    //bai 7
+   function bai7() {
+       for (let i = 1; i <101 ; i++) {
+           if (i%3 == 0 && i % 5 == 0){
+               document.write("FizzBuzz" + "<br>")
+           }else if (i % 3 == 0 ){
+               document.write("Fizz" + "<br>")
+           }else if (i % 5 ===0){
+               document.write("Buzz" + "<br>")
+           }else {
+               document.write(i+ " <br>")
+           }
+       }
+   }
+   //bai 8
+   function bai8() {
+       let f= prompt("Số bạn muốn đoán trong khoảng lớn nhất là bao nhiêu?")
+       let q = true
+       let d =parseInt( Math.random(f))
+       for (let i = 0; i < 3; i++) {
+           let e = +prompt("Nhập số bạn đoán")
+           if (e === d){
+               alert("bạn đoán đúng")
+               q = false
+               break
+           }else if (e > d ){
+               alert("Số bạn đoán lớn hơn")
+           }else {
+               alert("số bạn đoán bé hơn")
+           }
+
+       }
+       if (q){
+           alert("bạn hết lượt đoán")
+       }
+   }
+</script>

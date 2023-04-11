@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Sinh bảng cửu chương</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+
+
+  let i , j
+
+i = 10
+  let chia = "<table border='1'>"
+  while(i>0){
+    j=10
+    chia += "<tr>"
+    while ( j > 0){
+      chia  += "<td>"
+      chia += i + " - " + j + " = " + (i-j)
+      chia += "</td>"
+      j--
+    }
+    chia  += "</tr>"
+    i--
+  }
+  chia += "</table>"
+  document.write(chia)
+
+
+
+
+  /*let taBle = "<table border='1' ' width '600'  cellspacing = '0' cellpadding = '10'>"
+  for (let  i = 1; i <11 ; i++) {
+    taBle += "<tr>"
+    for (let  j = 1; j <11 ; j++) {
+      taBle= taBle+ "<td>"
+     taBle+=i + " * " + j + " = " + (i*j)
+      taBle +=  "</td>"
+
+    }
+
+    taBle += "</tr>"
+
+  }
+  taBle += "</table>"
+  document.write(taBle)*/
+
+ /* let   taBle
+    taBle=' <table border="1" width="400px" cellpadding="3" cellspacing="0"   >'
+   for (let i = 1; i < 11 ; i++) {
+     taBle += "<tr>"
+      for (let j = 1 ; j <11 ; j++ ){
+        taBle += "<td>" +i *j + "</td>"
+        document.write(i + "* " + j + " = " + i * j)
+
+      }
+
+     taBle += "</tr>"
+  }
+   taBle += "</table>"*/
+
+</script>

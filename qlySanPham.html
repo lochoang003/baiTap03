@@ -6,12 +6,16 @@
 </head>
 <body>
 <input id="inPut">
+<input id="inPut5">
 <button onclick="them()">add</button>
 <br>
 <br>
-<input id="inPut2" >
-<input id="inPut3" hidden="hidden">
-<button onclick="okEdit()" >ok</button>
+<div hidden="hidden" id="diV">
+    <input id="inPut2">
+    <input id="inPut4">
+    <input id="inPut3" hidden="hidden">
+    <button onclick="okEdit()">ok</button>
+</div>
 <br>
 <br>
 <br>
@@ -22,54 +26,70 @@
 </body>
 </html>
 <script>
-  let arr = [
-          'appel',
-          'orange',
-          'banana',
-  ]
-  function hienThi() {
-    let str =""
-    for (let i = 0; i < arr.length; i++) {
-      str += "<tr>\n" +
-              "        <td width='200'>"+arr[i]+"</td>\n" +
-              "        <td width='100'><button onclick='edit(" + i + ")'>edit</button></td>\n" +
-              "        <td><button onclick='deLeTe("+i+")'>delete</button></td>\n" +
-              "      </tr>"
+    let arr = [
+        ['appel', '01'],
+        ['orange', '02'],
+        ['banana', '03']
+    ]
+
+    function hienThi() {
+        let str = ""
+        for (let i = 0; i < arr.length; i++) {
+            str += "<tr>\n" +
+                "        <td width='200'>" + arr[i][0] + "</td>\n" +
+                "        <td width='200'>" + arr[i][1] + "</td>\n" +
+                "        <td width='100'><button onclick='edit(" + i + ")'>edit</button></td>\n" +
+                "        <td><button onclick='deLeTe(" + i + ")'>delete</button></td>\n" +
+                "      </tr>"
+        }
+        document.getElementById("taBle").innerHTML = str
     }
-    document.getElementById("taBle").innerHTML = str
-  }
-  hienThi()
-  function them() {
-    let input = document.getElementById("inPut").value
-    arr.push(input)
+
     hienThi()
-    document.getElementById("inPut").value = ""
 
-  }
+    function them() {
+        let arr3 = []
+        let input = document.getElementById("inPut").value
+        let input2 = document.getElementById("inPut5").value
+        arr3.push([input],input2)
+        arr.push(arr3)
+        hienThi()
+        document.getElementById("inPut").value = ""
+        document.getElementById("inPut5").value = ""
 
-  function edit(u) {
+    }
 
-    document.getElementById("inPut2").value = arr[u]
-    document.getElementById("inPut3").value = u
+    function edit(u) {
+        document.getElementById("diV").hidden = false
+        document.getElementById("inPut2").value = arr[u][0]
+        document.getElementById("inPut4").value = arr[u][1]
+        document.getElementById("inPut3").value = u
 
-  }
-  function okEdit() {
-    let editok = document.getElementById("inPut3").value
-    let edit = document.getElementById("inPut2").value
-    arr[editok]= edit
-    document.getElementById("inPut2").value = ""
-    hienThi()
-  }
-  function deLeTe(u) {
-      let arr2 = []
-      for (let i = 0; i < arr.length; i++) {
-          if (arr[i]!=arr[u]){
-              arr2.push(arr[i])
-          }
-      }
-      arr = arr2
-      hienThi()
+    }
 
-  }
+    function okEdit() {
+        let editok = document.getElementById("inPut3").value
+        let edit = document.getElementById("inPut2").value
+        let edit4 = document.getElementById("inPut4").value
+        arr[editok][0] = edit
+        arr[editok][1] = edit4
+
+        document.getElementById("inPut2").value = ""
+        document.getElementById("inPut4").value = ""
+        hienThi()
+        document.getElementById("diV").hidden = true
+    }
+
+    function deLeTe(u) {
+        let arr2 = []
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] != arr[u]) {
+                arr2.push(arr[i])
+            }
+        }
+        arr = arr2
+        hienThi()
+
+    }
 
 </script>

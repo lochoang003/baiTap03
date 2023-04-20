@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+<canvas id="canVas" width="800" height="500"  ></canvas>
+</body>
+</html>
+<script>
+  let canvas = document.getElementById("canVas")
+  let ctx = canvas.getContext('2d')
+  class Rectangle {
+    chieuDai
+    chieuRong
+
+    constructor(chieuDai,
+    chieuRong,
+    ) {
+      this.chieuDai=chieuDai
+      this.chieuRong = chieuRong
+    }
+  chuvi(){
+    return (this.chieuRong+this.chieuDai)*2
+  }
+  S(){
+      return this.chieuDai* this.chieuRong
+  }
+
+  }
+  let hinhvuong = new Rectangle(400,400)
+  ctx.fillRect( 10 , 20 , hinhvuong.chieuRong , hinhvuong.chieuDai)
+
+
+</script>
